@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ignacio.springboot.webapp.springboot_web.models.User;
+
 @RestController
 @RequestMapping("/api")
 // Devuelve la informacion como un json para que pueda ser
@@ -15,11 +17,10 @@ public class RestControllers {
 
   @GetMapping("/details")
   public Map<String, Object> details() {
+    User user = new User("Nacho", "Cardozo");
     Map<String, Object> response = new HashMap<>();
-
     response.put("title", "Hola Mundo Spring Framework Con Model");
-    response.put("name", "Nacho");
-    response.put("lastname", "Cardozo");
+    response.put("user", user);
     return response;
     // Cuando es RESTCONTROLLERS => JSON
     // Cuando es CONTROLLERS => vistas del servidor como THYMELEAF

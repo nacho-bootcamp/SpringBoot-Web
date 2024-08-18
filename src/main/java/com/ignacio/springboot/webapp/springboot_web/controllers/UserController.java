@@ -6,14 +6,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.ignacio.springboot.webapp.springboot_web.models.User;
+
 @Controller
 public class UserController {
 
   @GetMapping("/details")
   public String details(Model model) {
+    User user = new User("Nacho", "Cardozo");
     model.addAttribute("title", "Hola Mundo Spring Framework Con Model");
-    model.addAttribute("name", "Nacho");
-    model.addAttribute("lastname", "Cardozo");
+    model.addAttribute("user", user);
     return "details";
     // nombre de la plantillas debe ir para que funcione
     // osea los archivos que estan en la carpeta utils

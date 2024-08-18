@@ -9,10 +9,11 @@
   <h1 th:text="${title}"></h1>
   <ul>
     <li>
-      <h2 th:text="${name}"></h2>
+      <h2 th:text="${user.name}"></h2>
     </li>
     <li>
-      <h2 th:text="${lastname}"></h2>
+      <h2 th:text="${user.lastname}"></h2>
+      <!-- En este caso el user seria la llave del map  -->
     </li>
   </ul>
 </body>
